@@ -1,5 +1,5 @@
-gcp_credentials_path = "/Users/johndoe/credentials.json"
-region = "asia-southeast1"
-zone = "asia-southeast1-b"
-ssh_username = "johndoe"
-ssh_pub_key_path = "~/.ssh/droneci.pub"
+gcp_credentials_path = [GOOGLE_CLOUD_KEYFILE_JSON]
+region               = [REGION]
+zone                 = [ZONE]
+ssh_username         = [USERNAME]
+ssh_pub_key_path     = [SSH_PUBLIC_KEY_PATH]
