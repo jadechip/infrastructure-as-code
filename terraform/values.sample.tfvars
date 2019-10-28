@@ -1,5 +1,5 @@
-gcp_credentials_path = "/Users/jimericskogman/batcave/secrets/gcp/robot/Betrex-5bb5df7b027b.json"
+gcp_credentials_path = "/Users/johndoe/credentials.json"
 region = "asia-southeast1"
 zone = "asia-southeast1-b"
-ssh_username = "jimericskogman"
-ssh_pub_key_path = "~/.ssh/drone-ci.pub"
+ssh_username = "johndoe"
+ssh_pub_key_path = "~/.ssh/droneci.pub"
