@@ -1,0 +1,1 @@
+droneci ansible_host=00.100.100.100

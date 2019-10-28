@@ -1,0 +1,43 @@
+---
+- hosts: droneci
+  become: true
+  vars:
+    ansible_python_interpreter: "/usr/bin/env python3"  
+  environment:
+    DRONE_SERVER_HOST: '{{ lookup("env", "DRONE_SERVER_HOST") }}'
+    DRONE_RPC_SECRET: '{{ lookup("env", "DRONE_RPC_SECRET") }}'
+    DRONE_GITHUB_CLIENT_ID: '{{ lookup("env", "DRONE_GITHUB_CLIENT_ID") }}'
+    DRONE_GITHUB_CLIENT_SECRET: '{{ lookup("env", "DRONE_GITHUB_CLIENT_SECRET") }}'  
+  tasks:
+    - docker_compose:
+        project_name: drone
+        definition:
+          version: '3'
+          services:
+            server:
+              image: drone/drone:1.2.1
+              restart: always
+              ports:
+                - "80:80"
+              volumes:
+                - /var/lib/drone:/var/lib/drone/
+              environment:
+                - DRONE_SERVER_HOST=${DRONE_SERVER_HOST}
+                - DRONE_SERVER_PROTO=http
+                - DRONE_RPC_SECRET=${DRONE_RPC_SECRET}
+                - DRONE_GITHUB_SERVER=https://github.com
+                - DRONE_GITHUB_CLIENT_ID=${DRONE_GITHUB_CLIENT_ID}
+                - DRONE_GITHUB_CLIENT_SECRET=${DRONE_GITHUB_CLIENT_SECRET}
+            agent:
+              image: drone/agent:1.2.1
+              restart: always
+              command: agent
+              depends_on:
+                - server
+              volumes:
+                - /var/run/Docker.sock:/var/run/Docker.sock
+              environment:
+                - DRONE_LOGS_DEBUG=true
+                - DRONE_LOGS_TRACE=true
+                - DRONE_RPC_SERVER=http://server
+                - DRONE_RPC_SECRET=${DRONE_RPC_SECRET}
