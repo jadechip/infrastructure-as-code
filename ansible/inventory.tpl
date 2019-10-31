@@ -1,0 +1,1 @@
+droneci ansible_host=${VM_IP}

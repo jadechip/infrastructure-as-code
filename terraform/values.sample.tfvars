@@ -1,5 +1,0 @@
-gcp_credentials_path = [GOOGLE_CLOUD_KEYFILE_JSON]
-region               = [REGION]
-zone                 = [ZONE]
-ssh_username         = [USERNAME]
-ssh_pub_key_path     = [SSH_PUBLIC_KEY_PATH]
