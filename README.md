@@ -24,6 +24,9 @@ chmod +x init.sh
 
 Begin Terraforming!
 ```
+terraform init
+```
+```
 terraform plan
 ```
 ```
