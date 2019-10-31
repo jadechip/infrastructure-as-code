@@ -44,7 +44,7 @@ args+=($SSH_PUBLIC_KEY)
 
 
 for i in "${!args[@]}"; do
-  sed -i "" "s/\${${vars[$i]}}/${args[$i]}/g" terraform.tfvars
+  sed -i "" "s|\${${vars[$i]}}|\"${args[$i]}\"|g" terraform.tfvars
 done
 
 echo "Done"
