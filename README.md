@@ -51,7 +51,7 @@ cd ansible/
 Run the `init.sh` script to initialize the required values.
 ```
 chmod +x init.sh
-./init.sh
+. ./init.sh
 ```
 Check that Ansible can connect to your VM.
 ```
