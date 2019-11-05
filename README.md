@@ -1,7 +1,10 @@
 # infrastructure-as-code
-A brief template for setting up a CI/CD pipeline using Ansible, Terraform and Drone CI
 
-## Setup
+Companion code to [A CI/CD solution in under 10 minutes, using Terraform & Ansible on GCP](https://medium.com/google-cloud/a-ci-cd-solution-in-under-10-minutes-featuring-terraform-ansible-and-drone-ci-on-gcp-16bba497c655)
+
+[<img src="https://cdn-images-1.medium.com/max/600/1*VwcyIZ3x7tlrtME9QSjv1A.jpeg">](https://medium.com/google-cloud/a-ci-cd-solution-in-under-10-minutes-featuring-terraform-ansible-and-drone-ci-on-gcp-16bba497c655)
+
+## Steps
 
 
 ### Prereqs
